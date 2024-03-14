@@ -34,6 +34,9 @@ jobs:
         with:
           artifact-name: marine
 
+      - name: Setup IPFS CLI
+        uses: nahsi/setup-ipfs@v1
+
       - name: Build and package spell
         run: ./build.sh
 
