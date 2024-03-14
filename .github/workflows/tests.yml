@@ -23,19 +23,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      #- name: Setup Rust toolchain
-      #  uses: dsherret/rust-toolchain-file@v1
+      - name: Setup Rust toolchain
+        uses: dsherret/rust-toolchain-file@v1
 
-      #- name: Setup cargo-nextest
-      #  uses: taiki-e/install-action@nextest
+      - name: Setup cargo-nextest
+        uses: taiki-e/install-action@nextest
 
-      #- name: Setup marine
-      #  uses: fluencelabs/setup-marine@v1
-      #  with:
-      #    artifact-name: marine
+      - name: Setup marine
+        uses: fluencelabs/setup-marine@v1
+        with:
+          artifact-name: marine
 
-      #- name: Build and package spell
-      #  run: ./build.sh
+      - name: Build and package spell
+        run: ./build.sh
 
-      #- name: Run tests
-      #  run: ./test.sh
+      - name: Run tests
+        run: ./test.sh
