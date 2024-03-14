@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../.fluence/schemas/module.json
+version: 0
+
+type: rust
+
+name: ls_effector
+
+mountedBinaries:
+  ls: /usr/bin/ls
