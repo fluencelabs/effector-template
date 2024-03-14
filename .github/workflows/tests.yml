@@ -37,7 +37,7 @@ jobs:
       - name: Setup IPFS CLI
         uses: nahsi/setup-ipfs@v1
 
-      - name: Build and package spell
+      - name: Build
         run: ./build.sh
 
       - name: Run tests
