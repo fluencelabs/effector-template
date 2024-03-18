@@ -5,8 +5,8 @@
   "bump-patch-for-minor-pre-major": true,
   "packages": {
     ".": {
-        "package-name": "test-ci",
-        "compontent": "test-ci"
+        "package-name": "effector",
+        "compontent": "effector"
     }
   }
 }
