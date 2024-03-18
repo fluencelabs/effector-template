@@ -5,9 +5,6 @@ set -o errexit -o nounset -o pipefail
 cd "$(dirname "$0")"
 
 # This script builds all subprojects and puts all created Wasm modules in one dir
-cd effector
-marine build --release
-cd ..
+fluence module build ./effector --no-input
 
-cd cid
 cargo build --release

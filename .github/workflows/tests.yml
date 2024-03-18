@@ -23,19 +23,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup fcli
+        uses: fluencelabs/setup-fluence@v1
+        with:
+          # TODO: fluence module build now only in main, need to change later
+          version: main
+
       - name: Setup Rust toolchain
         uses: dsherret/rust-toolchain-file@v1
 
       - name: Setup cargo-nextest
         uses: taiki-e/install-action@nextest
-
-      - name: Setup marine
-        uses: fluencelabs/setup-marine@v1
-        with:
-          artifact-name: marine
-
-      - name: Setup IPFS CLI
-        uses: nahsi/setup-ipfs@v1
 
       - name: Build
         run: ./build.sh
