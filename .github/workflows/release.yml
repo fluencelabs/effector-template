@@ -76,6 +76,7 @@ jobs:
     if: ${{ needs.release-please.outputs.release_created }}
 
     runs-on: ubuntu-latest
+
     needs:
         - release-please
 
@@ -86,11 +87,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-    - name: Setup fcli
-      uses: fluencelabs/setup-fluence@v1
-      with:
-        # TODO: fluence module pack works only on main now, need to change later
-        version: unstable
+      - name: Setup fcli
+        uses: fluencelabs/setup-fluence@v1
+        with:
+          # TODO: fluence module pack works only on main now, need to change later
+          version: unstable
 
       - name: Build archive
         run: fluence module pack ./effector --binding-crate=./imports/ --no-input -d .
