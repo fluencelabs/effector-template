@@ -56,7 +56,7 @@ jobs:
         with:
           crate: cargo-edit
 
-      - name: Get nox version
+      - name: Get version
         id: version
         run: |
           version="$(jq -r '.[]' .github/release-please/manifest.json)"

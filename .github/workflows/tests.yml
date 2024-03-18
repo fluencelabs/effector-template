@@ -23,6 +23,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup IPFS CLI
+        uses: nahsi/setup-ipfs@v1
+
       - name: Setup fcli
         uses: fluencelabs/setup-fluence@v1
         with:
