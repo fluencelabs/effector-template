@@ -91,7 +91,7 @@ jobs:
         uses: fluencelabs/setup-fluence@v1
         with:
           # TODO: fluence module pack works only on main now, need to change later
-          version: unstable
+          version: main
 
       - name: Build archive
         run: fluence module pack ./effector --binding-crate=./imports/ --no-input -d .
