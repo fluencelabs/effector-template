@@ -18,9 +18,8 @@ This project consists of 4 crates:
 
 To build the project, you need:
 - [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) to build the rust project
-- [Marine CLI](https://fluence.dev/docs/marine-book/marine-tooling-reference/marine-cli) to build the effector module
 - [IPFS CLI](https://docs.ipfs.tech/install/command-line/#system-requirements) to build the cid crate
-You also may need to install [Marine Repl](https://fluence.dev/docs/marine-book/marine-tooling-reference/marine-repl) if you want to run your module manually for testing/debugging.
+- [Fluence CLI](https://fluence.dev/docs/build/setting-up/installing_cli) to build the effector
 
 The build.sh bash script located in the repository's root contains the commands to build the effector module and the cid crate.
 The test.sh bash script located in the repository's root contains the commands to run tests in the effector module.
