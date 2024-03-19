@@ -23,3 +23,10 @@ To build the project, you need:
 
 The build.sh bash script located in the repository's root contains the commands to build the effector module and the cid crate.
 The test.sh bash script located in the repository's root contains the commands to run tests in the effector module.
+
+
+### How to set release process
+
+We provide basic release process for you:
+- Tests are run on each PR and configured in `.github/workflows/tests.yml`
+- GitHub Release is created on each release PR merge. The flow is configured in `.github/workflows/release.yml`. Note that if you want to use it in your repository, you need to provide your own release token.
