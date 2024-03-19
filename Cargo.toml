@@ -1,0 +1,23 @@
+[workspace]
+resolver = "2"
+members = [ "effector", "types", "cid", "imports" ]
+
+  [workspace.dependencies]
+  marine-rs-sdk-test = "0.16.1"
+  eyre = "0.6.12"
+
+    [workspace.dependencies.ls-effector-types]
+    path = "types"
+
+    [workspace.dependencies.ls-effector-imports]
+    path = "imports"
+
+    [workspace.dependencies.ls_effector]
+    path = "effector"
+
+    [workspace.dependencies.ls-effector-cid]
+    path = "cid"
+
+    [workspace.dependencies.marine-rs-sdk]
+    version = "0.14.0"
+    features = [ "logger" ]
