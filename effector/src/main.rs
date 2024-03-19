@@ -3,17 +3,17 @@
 #![allow(improper_ctypes)]
 #![allow(non_snake_case)]
 
-mod utils;
 mod import;
+mod utils;
 
 use eyre::{eyre, Result};
 use ls_effector_types::*;
+use marine_rs_sdk::marine;
 use marine_rs_sdk::module_manifest;
 use marine_rs_sdk::WasmLoggerBuilder;
-use marine_rs_sdk::marine;
 
-use crate::utils::inject_vault;
 use crate::import::ls;
+use crate::utils::inject_vault;
 
 module_manifest!();
 
@@ -108,7 +108,6 @@ mod tests {
             .filter_module("marine_core", log::LevelFilter::Off)
             .is_test(true)
             .try_init();
-
 
         let file_names = vec!["test_file", "test_file2"];
         for name in &file_names {

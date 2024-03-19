@@ -13,13 +13,23 @@ fn main() {
     println!("cargo:rerun-if-changed={}", wasm_path);
 
     let output = Command::new("ipfs")
-        .args(&["add", "--only-hash", "-Q", "--cid-version", "1", "--hash", "sha2-256", "--chunker=size-262144", wasm_path])
+        .args(&[
+            "add",
+            "--only-hash",
+            "-Q",
+            "--cid-version",
+            "1",
+            "--hash",
+            "sha2-256",
+            "--chunker=size-262144",
+            wasm_path,
+        ])
         .output()
         .expect("Failed to execute IPFS command");
 
-
     if output.status.success() {
-        let cid = String::from_utf8(output.stdout).unwrap_or_else(|e| format!("Failed to parse IPFS output: {e:?}"));
+        let cid = String::from_utf8(output.stdout)
+            .unwrap_or_else(|e| format!("Failed to parse IPFS output: {e:?}"));
         let cid = cid.trim();
         let cid_path = format!("{}/{}", out_dir, target_cid_file);
         println!("cargo:warning=Generated CIDv1 {}", cid);
